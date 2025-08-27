@@ -1,0 +1,168 @@
+.experience-section {
+  background: #000;
+  color: #fff;
+  padding: 100px 60px;
+}
+
+.experience-title {
+  font-size: 100px;
+  font-weight: 900;
+  color: #ccff00;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.experience-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+.experience-list {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.experience-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.experience-item:hover {
+  border-bottom: 1px solid #ccff00;
+  cursor: pointer;
+}
+
+.job-info {
+  text-align: left;
+}
+
+.job-date {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.job-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.company-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ccff00; 
+}
+
+.company-name {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+}
+.experience-text-block {
+  flex: 1;
+  max-width: 40%;
+}
+
+.experience-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ccff00;
+  text-decoration: none;
+  border-bottom: 2px solid #ccff00;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1200px) {
+  .experience-title {
+    font-size: 80px;
+  }
+  .job-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .experience-section {
+    padding: 60px 20px;
+  }
+  .experience-title {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+  .experience-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .experience-list,
+  .experience-text-block {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .experience-title {
+    font-size: 40px;
+  }
+  .job-title {
+    font-size: 20px;
+  }
+  .job-date {
+    font-size: 14px;
+  }
+  .company-logo {
+    width: 35px;
+    height: 35px;
+  }
+  .company-name {
+    font-size: 16px;
+  }
+  .experience-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-title {
+    font-size: 28px;
+  }
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .download-button {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,153 @@
+.clients-section {
+  background: #000;
+  color: #fff;
+  padding: 100px 60px;
+}
+
+.clients-heading {
+  font-size: 80px;
+  font-weight: 900;
+  color: #ccff00;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.clients-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.client-image-placeholder {
+  width: 450px;
+  height: 350px;
+  background-color: #777;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-image-placeholder:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(204, 255, 0, 0.6);
+}
+
+.testimonial-block {
+  flex: 1;
+  max-width: 600px;
+  height: 400px;
+  background-color: #535252;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimonial-block:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(204, 255, 0, 0.6);
+}
+
+.testimonial-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.client-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.client-title {
+  font-size: 16px;
+  color: #ccc;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .clients-heading {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+
+  .client-image-placeholder {
+    width: 350px;
+    height: 270px;
+  }
+
+  .testimonial-block {
+    max-width: 500px;
+    height: auto;
+    padding: 30px;
+  }
+
+  .testimonial-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-section {
+    padding: 60px 20px;
+  }
+
+  .clients-heading {
+    font-size: 45px;
+    margin-bottom: 40px;
+  }
+
+  .clients-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .client-image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+  }
+
+  .testimonial-block {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-heading {
+    font-size: 32px;
+  }
+
+  .client-image-placeholder {
+    width: 100%;
+    max-width: 300px;
+    height: 180px;
+  }
+
+  .testimonial-block {
+    padding: 15px;
+    height: auto;
+  }
+
+  .testimonial-text p {
+    font-size: 14px;
+  }
+
+  .client-name {
+    font-size: 16px;
+  }
+
+  .client-title {
+    font-size: 14px;
+  }
+}

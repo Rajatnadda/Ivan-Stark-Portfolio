@@ -1,0 +1,65 @@
+.editable-text-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.editable-text-content {
+  position: relative;
+}
+
+.editable-text-content p {
+  margin: 0;
+}
+
+
+.edit-buttons {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.editable-text-content:hover .edit-buttons {
+  opacity: 1;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  background-color: #ccff00;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.edit-btn:hover,
+.save-btn:hover,
+.cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(204, 255, 0, 0.6);
+}
+
+.editing .edit-btn {
+  display: none;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background: transparent;
+  border: 2px solid #ccff00;
+  border-radius: 6px;
+  padding: 5px 10px;
+  width: 100%;
+  resize: none;
+  outline: none;
+}

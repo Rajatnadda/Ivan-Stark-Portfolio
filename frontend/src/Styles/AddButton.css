@@ -1,0 +1,79 @@
+.add-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-btn {
+  background-color: #ccff00;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+}
+
+
+.add-button-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.add-button-form input {
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+}
+.add-button-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #222;
+  color: #ccff00;
+  font-weight: bold;
+}
+
+.button-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.create-btn, .cancel-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-btn {
+  background-color: #ccff00;
+  color: #000;
+}
+
+.create-btn:hover {
+  background-color: #aaff00;
+}
+
+.cancel-btn {
+  background-color: #555;
+  color: #fff;
+}
