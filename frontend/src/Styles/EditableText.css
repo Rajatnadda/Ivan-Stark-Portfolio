@@ -12,7 +12,6 @@
   margin: 0;
 }
 
-/* Edit button hidden by default */
 .edit-buttons {
   position: absolute;
   top: 0;
@@ -63,8 +62,6 @@ textarea {
   resize: none;
   outline: none;
 }
-
-/* Modal styles for the edit popup */
 .modal-overlay {
   position: fixed;
   top: 0;

@@ -14,22 +14,18 @@ const EditableText = ({ component, field, initialValue, className }) => {
         body: JSON.stringify({ component, field, value }),
       });
 
-      // Check the raw response status and log it
       console.log("Response status:", response.status);
       console.log("Response status text:", response.statusText);
 
       if (response.ok) {
-        // If the response is good, try to parse the JSON
         const data = await response.json();
         console.log("Successfully saved data. Backend response:", data);
         setIsEditing(false);
       } else {
-        // If the response is not OK, log the error message from the backend
         const errorText = await response.text();
         console.error("Failed to save data. Backend error:", errorText);
       }
     } catch (err) {
-      // Catch any network-related errors (e.g., backend is not running)
       console.error("Error connecting to backend:", err);
     }
   };

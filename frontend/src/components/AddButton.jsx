@@ -33,16 +33,13 @@ const AddButton = ({ onAddButton }) => {
       console.log("Response status text:", response.statusText);
 
       if (response.ok) {
-        // If the response is good, try to parse the JSON
         const data = await response.json();
         console.log("Successfully saved button. Backend response:", data);
       } else {
-        // If the response is not OK, log the error message from the backend
         const errorText = await response.text();
         console.error("Failed to save button. Backend error:", errorText);
       }
     } catch (err) {
-      // Catch any network-related errors (e.g., backend is not running)
       console.error("Error saving button to backend:", err);
     }
 
