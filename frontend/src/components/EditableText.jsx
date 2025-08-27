@@ -7,18 +7,29 @@ const EditableText = ({ component, field, initialValue, className }) => {
 
   const handleSave = async () => {
     try {
+      console.log("Attempting to save data...");
       const response = await fetch("http://localhost:5000/update-section", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ component, field, value }),
       });
 
+      // Check the raw response status and log it
+      console.log("Response status:", response.status);
+      console.log("Response status text:", response.statusText);
+
       if (response.ok) {
+        // If the response is good, try to parse the JSON
+        const data = await response.json();
+        console.log("Successfully saved data. Backend response:", data);
         setIsEditing(false);
       } else {
-        console.error("Failed to save data.");
+        // If the response is not OK, log the error message from the backend
+        const errorText = await response.text();
+        console.error("Failed to save data. Backend error:", errorText);
       }
     } catch (err) {
+      // Catch any network-related errors (e.g., backend is not running)
       console.error("Error connecting to backend:", err);
     }
   };
@@ -27,24 +38,26 @@ const EditableText = ({ component, field, initialValue, className }) => {
     <div className={`editable-text-wrapper ${className}`}>
       <div className="editable-text-content">
         {isEditing ? (
-          <textarea
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
+          <div className="modal-overlay">
+            <div className="edit-popup">
+              <textarea
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
+              <div className="popup-buttons">
+                <button className="save-btn" onClick={handleSave}>Save</button>
+                <button className="cancel-btn" onClick={() => setIsEditing(false)}>Cancel</button>
+              </div>
+            </div>
+          </div>
         ) : (
-          <p>{value}</p>
+          <>
+            <p>{value}</p>
+            <div className="edit-buttons">
+              <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit</button>
+            </div>
+          </>
         )}
-
-        <div className={`edit-buttons ${isEditing ? "editing" : ""}`}>
-          {isEditing ? (
-            <>
-              <button className="save-btn" onClick={handleSave}>Save</button>
-              <button className="cancel-btn" onClick={() => setIsEditing(false)}>Cancel</button>
-            </>
-          ) : (
-            <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit</button>
-          )}
-        </div>
       </div>
     </div>
   );

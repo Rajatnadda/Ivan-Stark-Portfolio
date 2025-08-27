@@ -6,7 +6,7 @@ const AddButton = ({ onAddButton }) => {
   const [buttonText, setButtonText] = useState("");
   const [buttonUrl, setButtonUrl] = useState("");
   const [buttonColor, setButtonColor] = useState("#ccff00");
-  const [buttonType, setButtonType] = useState("button"); // New field
+  const [buttonType, setButtonType] = useState("button");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,8 +14,12 @@ const AddButton = ({ onAddButton }) => {
 
     const newButton = { text: buttonText, url: buttonUrl, bgColor: buttonColor, type: buttonType };
     onAddButton(newButton);
+
     try {
-      await fetch("http://localhost:5000/update-section", {
+      console.log("Attempting to save button to backend...");
+      console.log("Button data:", newButton);
+
+      const response = await fetch("http://localhost:5000/update-section", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -24,7 +28,21 @@ const AddButton = ({ onAddButton }) => {
           value: newButton,
         }),
       });
+
+      console.log("Response status:", response.status);
+      console.log("Response status text:", response.statusText);
+
+      if (response.ok) {
+        // If the response is good, try to parse the JSON
+        const data = await response.json();
+        console.log("Successfully saved button. Backend response:", data);
+      } else {
+        // If the response is not OK, log the error message from the backend
+        const errorText = await response.text();
+        console.error("Failed to save button. Backend error:", errorText);
+      }
     } catch (err) {
+      // Catch any network-related errors (e.g., backend is not running)
       console.error("Error saving button to backend:", err);
     }
 
