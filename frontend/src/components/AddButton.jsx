@@ -19,7 +19,7 @@ const AddButton = ({ onAddButton }) => {
       console.log("Attempting to save button to backend...");
       console.log("Button data:", newButton);
 
-      const response = await fetch("http://localhost:5000/update-section", {
+      const response = await fetch("https://ivan-stark-portfolio.onrender.com/update-section", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

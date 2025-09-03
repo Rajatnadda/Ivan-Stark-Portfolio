@@ -8,7 +8,7 @@ const EditableText = ({ component, field, initialValue, className }) => {
   const handleSave = async () => {
     try {
       console.log("Attempting to save data...");
-      const response = await fetch("http://localhost:5000/update-section", {
+      const response = await fetch("https://ivan-stark-portfolio.onrender.com/update-section", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ component, field, value }),
