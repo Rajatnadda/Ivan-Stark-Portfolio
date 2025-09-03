@@ -1,92 +1,104 @@
+/* Container */
 .add-button-container {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+/* Add Button */
 .add-btn {
-  background-color: #ccff00;
-  color: #000;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
   border: none;
-  padding: 12px 24px;
-  font-weight: bold;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(204, 255, 0, 0.4);
+  transition: background-color 0.2s;
 }
 
 .add-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(204, 255, 0, 0.5);
+  background-color: #218838;
 }
 
+/* Form */
 .add-button-form {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  background-color: #111;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 250px;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease forwards;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px; /* makes it look good on desktop */
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
+/* Inputs and select */
 .add-button-form input,
 .add-button-form select {
-  padding: 8px 12px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  border: 1px solid #333;
-  background-color: #222;
-  color: #fff;
-  outline: none;
-  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.add-button-form input::placeholder {
-  color: #aaa;
-}
-
+/* Actions */
 .button-actions {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-.create-btn,
-.cancel-btn {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s ease;
-}
-
+/* Create & Cancel Buttons */
 .create-btn {
-  background-color: #ccff00;
-  color: #000;
+  flex: 1;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .create-btn:hover {
-  background-color: #b0e000;
+  background-color: #0069d9;
 }
 
 .cancel-btn {
-  background-color: #444;
-  color: #fff;
+  flex: 1;
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .cancel-btn:hover {
-  background-color: #555;
+  background-color: #c82333;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .add-button-form {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .button-actions {
+    flex-direction: column;
+  }
+
+  .create-btn,
+  .cancel-btn {
+    width: 100%;
+  }
 }

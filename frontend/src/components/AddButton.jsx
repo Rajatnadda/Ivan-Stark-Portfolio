@@ -58,36 +58,38 @@ const AddButton = ({ onAddButton }) => {
         </button>
       )}
 
-      {showForm && (
-        <form className="add-button-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Button Text"
-            value={buttonText}
-            onChange={(e) => setButtonText(e.target.value)}
-          />
-          <input
-            type="url"
-            placeholder="Button URL"
-            value={buttonUrl}
-            onChange={(e) => setButtonUrl(e.target.value)}
-          />
-          <input
-            type="color"
-            value={buttonColor}
-            onChange={(e) => setButtonColor(e.target.value)}
-          />
-          <select value={buttonType} onChange={(e) => setButtonType(e.target.value)}>
-            <option value="button">Button</option>
-            <option value="submit">Submit</option>
-            <option value="reset">Reset</option>
-          </select>
-          <div className="button-actions">
-            <button type="submit" className="create-btn">Create</button>
-            <button type="button" onClick={() => setShowForm(false)} className="cancel-btn">Cancel</button>
-          </div>
-        </form>
-      )}
+   {showForm && (
+  <form className="add-button-form" onSubmit={handleSubmit}>
+    <input
+      type="text"
+      placeholder="Button Text"
+      value={buttonText}
+      onChange={(e) => setButtonText(e.target.value)}
+      autoFocus
+    />
+    <input
+      type="url"
+      placeholder="Button URL"
+      value={buttonUrl}
+      onChange={(e) => setButtonUrl(e.target.value)}
+    />
+    <input
+      type="color"
+      value={buttonColor}
+      onChange={(e) => setButtonColor(e.target.value)}
+    />
+    <select value={buttonType} onChange={(e) => setButtonType(e.target.value)}>
+      <option value="button">Button</option>
+      <option value="submit">Submit</option>
+      <option value="reset">Reset</option>
+    </select>
+    <div className="button-actions">
+      <button type="submit" className="create-btn">Create</button>
+      <button type="button" onClick={() => setShowForm(false)} className="cancel-btn">Cancel</button>
+    </div>
+  </form>
+)}
+
     </div>
   );
 };
